@@ -1,12 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-gray-900 bg-gray-900 place-content-center">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tristan Cox's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <div class="">Hi</div>
-</body>
+    <div class="grid grid-cols-1 gap-4 justify-items-stretch place-content-center h-64">
+        <h1 class="text-3xl font-bold text-sky-400 justify-self-center">Tristan Cox</h1>
+        <a href="https://github.com/nice-sprite" target="_blank;norefferer"
+            class="justify-self-center text-blue-600 visited:text-purple-600">https://github.com/nice-sprite</a>
+        <a href="https://www.linkedin.com/in/tristan-cox-07501520b/" target="_blank;norefferer"
+            class="justify-self-center  text-blue-600 visited:text-purple-600">https://www.linkedin.com/in/tristan-cox</a>
+    </div>
+    <div class="grid grid-cols-1 grid-rows-2 gap-4 justify-items-stretch place-content-center">
+        <div>
+            <h1 class="text-3xl mx-5 px-10 pb-5 font-bold text-sky-400 justify-self-center">Custom Heads-Up-Display
+                System:</h1>
+            <p class="text-white mx-5 px-10">This is a showcase of the standard workings of the WaW HUD features
+                reimplemented in BO3 Lua.
+                Bo3 made no effort to maintain backwards compatibility with the old gsc/menu system, so a lot of things
+                don't "just work". I needed to fiddle with the code a lot and reverse engineer both the LUI (Lua UI) API
+                and the game binary to understand how to approach the endless roadblocks and strangeness of this game.
+                For instance, around the 0:14 mark, I pull out the flamethrower to showcase the widget in the
+                lower-right corner that mimics the World at War aesthetic. I had to re-write this widget since my
+                initial method involved asking the server how much fuel had been used, then sending that info back to
+                the client using it. I later found a better way to do this that totally eliminated the round-trip and
+                increased the smoothness because now it could cheaply update the fuel usage at 60hz instead of 20hz.
+                This scenario happened *a lot* since there is no documentation, so I ended up having to go back and
+                rewrite earlier versions of code that were extremely hacky and sorta buggy almost constantly, as while
+                working on other parts.
+
+                There were also rather mysterious performance bugs involving fonts. To recreate the unique look and feel
+                of the classic HUD, I found and downloaded a TTF that looked a lot like the font used in WaW, however
+                when using that font, the *whole game* would stutter incessantly. If you notice on the lower-right
+                bottom of the screen again, when I kill a zombie there is a points number that "scrolls" to the new
+                value. That is the main UI element that really uses that font. It seems small, but that actually took me
+                2 weeks of long debugging sessions between homework and class to figure out the root of the issue and
+                get performance back to where it should be. Of course, I figured out that the TTF file itself was very
+                strange... and I replaced it with a different TTF of the same font and all the issues went away! I can
+                only speculate, but I think the TTF I originally used just didn't play nice with the HarfBuzz text
+                shaping engine, and when the number scrolling happens it takes a VERY slow code path. Unfortunately Bo3
+                has lots of antidebug crap in it, and tools like RenderDoc and Intel GPA just make the game close when
+                they install their hooks or open a handle to the process, so I can't really be 100% certain.
+
+                Overall, overcoming these challenges taught me a lot about patience and perseverance, and I am proud of
+                how accurate the result is to the original game.</p>
+        </div>
+        <iframe class="" width="" height="" src="https://www.youtube.com/embed/cHBl0tvl23o" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <div class="grid grid-cols-1 grid-rows-2 gap-4 justify-items-stretch place-content-center">
+        <div>
+            <h1 class="text-3xl mx-5 px-10 pb-5 font-bold text-sky-400 justify-self-center">Custom Heads-Up-Display
+                System:</h1>
+            <p class="text-white mx-5 px-10">This is a showcase of the standard workings of the WaW HUD features
+                reimplemented in BO3 Lua.
+                Bo3 made no effort to maintain backwards compatibility with the old gsc/menu system, so a lot of things
+                don't "just work". I needed to fiddle with the code a lot and reverse engineer both the LUI (Lua UI) API
+                and the game binary to understand how to approach the endless roadblocks and strangeness of this game.
+                For instance, around the 0:14 mark, I pull out the flamethrower to showcase the widget in the
+                lower-right corner that mimics the World at War aesthetic. I had to re-write this widget since my
+                initial method involved asking the server how much fuel had been used, then sending that info back to
+                the client using it. I later found a better way to do this that totally eliminated the round-trip and
+                increased the smoothness because now it could cheaply update the fuel usage at 60hz instead of 20hz.
+                This scenario happened *a lot* since there is no documentation, so I ended up having to go back and
+                rewrite earlier versions of code that were extremely hacky and sorta buggy almost constantly, as while
+                working on other parts.
+
+                There were also rather mysterious performance bugs involving fonts. To recreate the unique look and feel
+                of the classic HUD, I found and downloaded a TTF that looked a lot like the font used in WaW, however
+                when using that font, the *whole game* would stutter incessantly. If you notice on the lower-right
+                bottom of the screen again, when I kill a zombie there is a points number that "scrolls" to the new
+                value. That is the main UI element that really uses that font. It seems small, but that actually took me
+                2 weeks of long debugging sessions between homework and class to figure out the root of the issue and
+                get performance back to where it should be. Of course, I figured out that the TTF file itself was very
+                strange... and I replaced it with a different TTF of the same font and all the issues went away! I can
+                only speculate, but I think the TTF I originally used just didn't play nice with the HarfBuzz text
+                shaping engine, and when the number scrolling happens it takes a VERY slow code path. Unfortunately Bo3
+                has lots of antidebug crap in it, and tools like RenderDoc and Intel GPA just make the game close when
+                they install their hooks or open a handle to the process, so I can't really be 100% certain.
+
+                Overall, overcoming these challenges taught me a lot about patience and perseverance, and I am proud of
+                how accurate the result is to the original game.</p>
+        </div>
+        <iframe class="" width="" height="" src="https://www.youtube.com/embed/cHBl0tvl23o" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </d </body>
+
 </html>
