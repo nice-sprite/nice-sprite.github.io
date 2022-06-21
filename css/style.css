@@ -2,6 +2,8 @@ iframe {
     height: 50vh;
     width: max(50%, 75vw);
     justify-self: center;
+    margin: auto;
+    padding: auto;
 }
 
 img {
@@ -11,6 +13,10 @@ img {
     margin: auto;
     padding: 2em;
 
+}
+
+figcaption {
+    padding-left: 2em;
 }
 
 
