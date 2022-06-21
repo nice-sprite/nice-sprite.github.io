@@ -1,5 +1,29 @@
 iframe {
-    width: 50vw;
     height: 50vh;
+    width: max(50%, 75vw);
     justify-self: center;
+}
+
+img {
+    display: block !important;
+    justify-self: center;
+    height: 75%;
+    margin: auto;
+    padding: 2em;
+
+}
+
+
+.description-body {
+    display: flex;
+    flex-wrap: inherit;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    /* align-items: center; */
+    /* padding: max(50vw, 50%); */
+    /* width: max-content; */
+    padding-left: max(10vw, 10%);
+    padding-right: max(10vw, 10%);
+
 }

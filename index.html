@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-gray-900 bg-gray-900 place-content-center">
+<html lang="en" class="bg-gray-900 ">
 
 <head>
     <meta charset="UTF-8">
@@ -8,93 +8,158 @@
     <title>Tristan Cox's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./images/favicon.png">
+
 </head>
 
 <body>
-    <div class="grid grid-cols-1 gap-4 justify-items-stretch place-content-center h-64">
-        <h1 class="text-3xl font-bold text-sky-400 justify-self-center">Tristan Cox</h1>
+    <div class="grid grid-cols-1 gap-4 m-5 py-5 justify-items-stretch place-content-center ">
+        <h1 class="text-6xl text-green-400 justify-self-center" style="font-family: monospace;">Tristan Cox
+        </h1>
         <a href="https://github.com/nice-sprite" target="_blank;norefferer"
-            class="justify-self-center text-blue-600 visited:text-purple-600">https://github.com/nice-sprite</a>
-        <a href="https://www.linkedin.com/in/tristan-cox-07501520b/" target="_blank;norefferer"
-            class="justify-self-center  text-blue-600 visited:text-purple-600">https://www.linkedin.com/in/tristan-cox</a>
+            class="justify-self-center text-blue-600 visited:text-purple-400">https://github.com/nice-sprite</a>
+        <a href="https://www.linkedin.com/in/tristan-cox-07501*520b/" target="_blank;norefferer"
+            class="justify-self-center  text-blue-300 visited:text-purple-600">https://www.linkedin.com/in/tristan-cox</a>
     </div>
-    <div class="grid grid-cols-1 grid-rows-2 gap-4 justify-items-stretch place-content-center">
-        <div>
-            <h1 class="text-3xl mx-5 px-10 pb-5 font-bold text-sky-400 justify-self-center">Custom Heads-Up-Display
-                System:</h1>
-            <p class="text-white mx-5 px-10">This is a showcase of the standard workings of the WaW HUD features
-                reimplemented in BO3 Lua.
-                Bo3 made no effort to maintain backwards compatibility with the old gsc/menu system, so a lot of things
-                don't "just work". I needed to fiddle with the code a lot and reverse engineer both the LUI (Lua UI) API
-                and the game binary to understand how to approach the endless roadblocks and strangeness of this game.
-                For instance, around the 0:14 mark, I pull out the flamethrower to showcase the widget in the
-                lower-right corner that mimics the World at War aesthetic. I had to re-write this widget since my
-                initial method involved asking the server how much fuel had been used, then sending that info back to
-                the client using it. I later found a better way to do this that totally eliminated the round-trip and
-                increased the smoothness because now it could cheaply update the fuel usage at 60hz instead of 20hz.
-                This scenario happened *a lot* since there is no documentation, so I ended up having to go back and
-                rewrite earlier versions of code that were extremely hacky and sorta buggy almost constantly, as while
-                working on other parts.
 
-                There were also rather mysterious performance bugs involving fonts. To recreate the unique look and feel
-                of the classic HUD, I found and downloaded a TTF that looked a lot like the font used in WaW, however
-                when using that font, the *whole game* would stutter incessantly. If you notice on the lower-right
-                bottom of the screen again, when I kill a zombie there is a points number that "scrolls" to the new
-                value. That is the main UI element that really uses that font. It seems small, but that actually took me
-                2 weeks of long debugging sessions between homework and class to figure out the root of the issue and
-                get performance back to where it should be. Of course, I figured out that the TTF file itself was very
-                strange... and I replaced it with a different TTF of the same font and all the issues went away! I can
-                only speculate, but I think the TTF I originally used just didn't play nice with the HarfBuzz text
-                shaping engine, and when the number scrolling happens it takes a VERY slow code path. Unfortunately Bo3
-                has lots of antidebug crap in it, and tools like RenderDoc and Intel GPA just make the game close when
-                they install their hooks or open a handle to the process, so I can't really be 100% certain.
+    <div>
+        <div class="description-body">
+            <h1 class="text-2xl mx-5 mt-10 px-10 pb-5 text-green-400"
+                style="text-align: center; text-decoration: underline;">
+                Custom Heads-Up-Display
+                System</h1>
+            <div style="">
+                <p class="text-white " style="text-indent: 2em; align-self: center;">
+                    This is a showcase of
+                    the
+                    standard workings
+                    of the WaW HUD features
+                    reimplemented in BO3 Lua.
+                    Bo3 made no effort to maintain backwards compatibility with the old gsc/menu system, so a lot of
+                    things
+                    don't "just work". I needed to fiddle with the code a lot and reverse engineer both the LUI (Lua UI)
+                    API
+                    and the game binary to understand how to approach the endless roadblocks and strangeness of this
+                    game.
+                    For instance, around the 0:14 mark, I pull out the flamethrower to showcase the widget in the
+                    lower-right corner that mimics the World at War aesthetic. I had to re-write this widget since my
+                    initial method involved asking the server how much fuel had been used, then sending that info back
+                    to
+                    the client using it. I later found a better way to do this that totally eliminated the round-trip
+                    and
+                    increased the smoothness because now it could cheaply update the fuel usage at 60hz instead of 20hz.
+                    This scenario happened <i>a lot</i> since there is no documentation, so I ended up having to go back
+                    and
+                    rewrite earlier versions of code that were extremely hacky and sorta buggy almost constantly, as
+                    while
+                    working on other parts.
+                </p>
+                <br>
+                <p class="text-white " style="text-indent: 2em;">
+                    There were also rather mysterious performance bugs involving fonts. To recreate the unique look and
+                    feel
+                    of the classic HUD, I found and downloaded a TTF that looked a lot like the font used in WaW,
+                    however
+                    when using that font, the *whole game* would stutter incessantly. If you notice on the lower-right
+                    bottom of the screen again, when I kill a zombie there is a points number that "scrolls" to the new
+                    value. That is the main UI element that really uses that font. It seems small, but that actually
+                    took me
+                    2 weeks of long debugging sessions between homework and class to figure out the root of the issue
+                    and
+                    get performance back to where it should be. Of course, I figured out that the TTF file itself was
+                    very
+                    strange... and I replaced it with a different TTF of the same font and all the issues went away! I
+                    can
+                    only speculate, but I think the TTF I originally used just didn't play nice with the HarfBuzz text
+                    shaping engine, and when the number scrolling happens it takes a VERY slow code path. Unfortunately
+                    Bo3
+                    has lots of antidebug crap in it, and tools like RenderDoc and Intel GPA just make the game close
+                    when
+                    they install their hooks or open a handle to the process, so I can't really be 100% certain.
 
-                Overall, overcoming these challenges taught me a lot about patience and perseverance, and I am proud of
-                how accurate the result is to the original game.</p>
+                    Overall, overcoming these challenges taught me a lot about patience and perseverance, and I am proud
+                    of
+                    how accurate the result is to the original game.
+                </p>
+
+            </div>
         </div>
-        <iframe class="" width="" height="" src="https://www.youtube.com/embed/cHBl0tvl23o" title="YouTube video player"
-            frameborder="0"
+        <iframe class="m-5 p-5" width="" height="" src="https://www.youtube.com/embed/cHBl0tvl23o"
+            title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
-    <div class="grid grid-cols-1 grid-rows-2 gap-4 justify-items-stretch place-content-center">
+
+    <div class="description-body">
         <div>
-            <h1 class="text-3xl mx-5 px-10 pb-5 font-bold text-sky-400 justify-self-center">Custom Heads-Up-Display
-                System:</h1>
-            <p class="text-white mx-5 px-10">This is a showcase of the standard workings of the WaW HUD features
-                reimplemented in BO3 Lua.
-                Bo3 made no effort to maintain backwards compatibility with the old gsc/menu system, so a lot of things
-                don't "just work". I needed to fiddle with the code a lot and reverse engineer both the LUI (Lua UI) API
-                and the game binary to understand how to approach the endless roadblocks and strangeness of this game.
-                For instance, around the 0:14 mark, I pull out the flamethrower to showcase the widget in the
-                lower-right corner that mimics the World at War aesthetic. I had to re-write this widget since my
-                initial method involved asking the server how much fuel had been used, then sending that info back to
-                the client using it. I later found a better way to do this that totally eliminated the round-trip and
-                increased the smoothness because now it could cheaply update the fuel usage at 60hz instead of 20hz.
-                This scenario happened *a lot* since there is no documentation, so I ended up having to go back and
-                rewrite earlier versions of code that were extremely hacky and sorta buggy almost constantly, as while
-                working on other parts.
 
-                There were also rather mysterious performance bugs involving fonts. To recreate the unique look and feel
-                of the classic HUD, I found and downloaded a TTF that looked a lot like the font used in WaW, however
-                when using that font, the *whole game* would stutter incessantly. If you notice on the lower-right
-                bottom of the screen again, when I kill a zombie there is a points number that "scrolls" to the new
-                value. That is the main UI element that really uses that font. It seems small, but that actually took me
-                2 weeks of long debugging sessions between homework and class to figure out the root of the issue and
-                get performance back to where it should be. Of course, I figured out that the TTF file itself was very
-                strange... and I replaced it with a different TTF of the same font and all the issues went away! I can
-                only speculate, but I think the TTF I originally used just didn't play nice with the HarfBuzz text
-                shaping engine, and when the number scrolling happens it takes a VERY slow code path. Unfortunately Bo3
-                has lots of antidebug crap in it, and tools like RenderDoc and Intel GPA just make the game close when
-                they install their hooks or open a handle to the process, so I can't really be 100% certain.
+            <h1 class="text-2xl mx-5 mt-10 px-10 pb-5 text-green-400"
+                style="text-align: center; text-decoration: underline;">
+                BGFX rendering backend
+                for
+                egui</h1>
+            <div>
+                <p class="text-white " style="text-indent: 2em; align-self: center;">
+                    needed a UI library that was simple
+                    to use and was written in Rust. I found egui, which takes heavy inspiration from ImGui. It provides
+                    familiar immediate-mode UI concepts combined with the robustness Rust provides, making it perfect
+                    for my
+                    project. The only issue was that there was not an existing integration for egui that would work with
+                    my
+                    current graphics stack (bgfx), so I had to write it myself. This was a challenge because I had only
+                    been
+                    writing Rust for about half of a week when I started, never written a complete rendering backend for
+                    a UI library,
+                    and it was my first time using BGFX. Even with all that against me in just a couple weeks (and a few
+                    rough hours debugging in RenderDoc...) I was able to get everything working perfectly and this is
+                    the result:
+                </p>
+                <br>
 
-                Overall, overcoming these challenges taught me a lot about patience and perseverance, and I am proud of
-                how accurate the result is to the original game.</p>
+            </div>
+            <div style="border: 1px white solid">
+                <figure>
+                    <figcaption class="text-gray-400 ">egui being rendered in my custom tool with my custom rendering backend: </figcaption>
+                    <img src="./images/rendering_demo.gif" alt="">
+                </figure>
+            </div>
+
         </div>
-        <iframe class="" width="" height="" src="https://www.youtube.com/embed/cHBl0tvl23o" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </d </body>
+    </div>
+
+    <div class="" style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <h1 class="text-3xl mx-5 px-10 pb-5 font-bold text-green-400 justify-self-center">Commission Tracker
+            Android App</h1>
+        <div>
+            <p class="text-white mx-5 px-10" style="text-indent: 2em;">
+                This commission tracker app was developed for my girlfriend, who is a freelance artist. She
+                complained to me she was getting so many clients it was becoming hard to keep track of them.
+                The problem was her clients come from many different platforms, so scrolling
+                through her direct messages on the different platforms trying to remember who said what and where
+                was too much mental overhead. I really enjoy finding
+                ways to use my skills to help others, so I had the idea to develop an Android app to help her keep
+                track of it all more easily. Before this undertaking, I had never written any kind of mobile
+                application, so I had to learn a lot of new things and adjust to a smaller screensize than I
+                normally develop for. The technology stack I
+                settled on was NativeScript Vue, however I did try React Native and Expo while researching what
+                tools I would need. Android apps also have different filesystem and permissions models, so to
+                implement the essential 'save' feature, I had to do a bit of research. Feedback from the girlfriend:
+                <i><q>It’s excellent for keeping track of commissions , helps with time and budget management as
+                        well.
+                        It’s easy to use and efficient
+                    </q>
+                </i>
+            </p>
+            <br>
+
+        </div>
+        <div>
+
+            <img src="./images/phoness1.png" alt="">
+
+        </div>
+    </div>
+
+</body>
 
 </html>
