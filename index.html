@@ -6,19 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tristan Cox's Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./images/favicon.png">
 
 </head>
 
 <body>
+
+    <h1>About me</h1>
+    <p>
+        I'm Tristan, a Computer Science student at the University of Texas at Dallas.
+        I started programming in early middle school with C/C++ due to my interest in games and game modding.
+        In my freetime, I develop tools to accelerate gamedev workflows. I am passionate about performance, and strive
+        to produce tools that never lag, feel satisfying to use, and give the user complete freedom to adapt the tool
+        to their workflow.
+    </p>
+
+    <h1>Projects</h1>
+    <h3>LUI Editor</h3>
+    <p>
+        LUI stands for "Lua UI", and is the scripting framework used by the Call of Duty engine for all 2D menus, HUDs,
+        3D waypoints, etc since Black Ops 2.
+        In Black Ops 3, Treyarch released ModTools to allow the modding community they currated back in 2008 to continue
+        modding on new versions of the game engine, unlocking more possibilities.
+        However, this newer release of modtools did not include the ability to modify the game's lua files to run custom
+        UI code. Other modders in the community
+        have since added support, however it is very rudimentary, and frustrating to work with.
+        This rudimentary support leaves several problems including very poor iteration time, no error support from the
+        lua interpreter, and a complicated animation/state system.
+        My LUI editor aims to solve these issues by providing custom content creators the ability to drag & drop UI
+        images in a photoshop-like manner, provide keyframing animation tools, and
+        automatic code generation to streamline the process.
+    <p>
+        <i>Technology used: C++, DirectX11, Freetype, Harfbuzz, Win32</i><br>
+        The code is available here: <a target="_blank"
+            href="https://github.com/nice-sprite/luieditor">https://github.com/nice-sprite/luieditor<br></a>
+
+        <b>Showcase here: <a target="_blank" href="/luieditor.html" target="_blank">Here</a></b><br>
+    </p>
+    </p>
+
+    <h3>Custom Renderer integration for <a target="_blank" target="_blank" href="https://github.com/emilk/egui">egui</a>
+    </h3>
+
+    <p>
+        While researching good libraries and tools to enable me to build the LUI Editor, I ventured into the Rust
+        ecosystem and found egui, an immediate mode UI library.
+        The library looked nice but I was not satisfied with the existing renderer integrations available at the time,
+        and wanted more control. As a result, I wrote a renderer for egui using rust bindings for
+        <a target="_blank" href="https://github.com/bkaradzic/bgfx">bgfx</a>, a well-known and battletested graphics API
+        abstraction. The result performed very well, and I was able to prototype a simple version of what I had in mind
+        for the LUI editor before deciding against using Rust for this project.
+
+    <p>
+        The code is available here: <a target="_blank"
+            href="https://github.com/nice-sprite/equinox">https://github.com/nice-sprite/equinox<br></a>
+        <i>Technology used: Rust, BGFX, Winit (rust windowing library) </i> <br>
+        <b>Showcase here: <a target="_blank" href="/egui.html">Here</a></b><br>
+    </p>
+    </p>
+    <!--
     <div class="grid grid-cols-1 gap-4 m-5 py-5 justify-items-stretch place-content-center ">
         <h1 class="text-6xl text-green-400 justify-self-center" style="font-family: monospace;">Tristan Cox
         </h1>
-        <a href="https://github.com/nice-sprite" target="_blank;norefferer"
+        <a target="_blank" href="https://github.com/nice-sprite" target="_blank;norefferer"
             class="justify-self-center text-blue-600 visited:text-purple-400">https://github.com/nice-sprite</a>
-        <a href="https://www.linkedin.com/in/tristan-cox-07501520b/" target="_blank;norefferer"
+        <a target="_blank" href="https://www.linkedin.com/in/tristan-cox-07501520b/" target="_blank;norefferer"
             class="justify-self-center  text-blue-300 visited:text-purple-400">https://www.linkedin.com/in/tristan-cox</a>
         <div class="description-body">
             <p class="text-white" style="font-size: 1.2em">
@@ -32,6 +85,8 @@
             </p>
         </div>
     </div>
+
+    <h3></h3>
 
     <div>
         <div class="description-body">
@@ -170,6 +225,7 @@
 
         </div>
     </div>
+-->
 
 </body>
 
