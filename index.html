@@ -9,61 +9,67 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./images/favicon.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo&family=JetBrains+Mono&family=Open+Sans&family=Raleway&display=swap"
+        rel="stylesheet">
+
 </head>
 
-<body>
+<body >
 
-    <h1>About me</h1>
+
+    <h1>Tristan Cox</h1>
     <p>
-        I'm Tristan, a Computer Science student at the University of Texas at Dallas.
-        I started programming in early middle school with C/C++ due to my interest in games and game modding.
+        I am studying CS at the University of Texas at Dallas.
         In my freetime, I develop tools to accelerate gamedev workflows. I am passionate about performance, and strive
-        to produce tools that never lag, feel satisfying to use, and give the user complete freedom to adapt the tool
-        to their workflow.
+        to produce tools that never lag and feel satisfying to use.
+    <br>
     </p>
+    <section>
+        <a href="https://github.com/nice-sprite" target="_blank">My GitHub</a>
+        <br>
+        <a href="https://www.linkedin.com/in/tristan-cox-07501520b/" target="_blank">LinkedIn</a>
+        <br>
+        <a href="/resume/TristanCoxResume_2023.docx">Resume (DOCX)</a>
+        <br>
+        <a href="/resume/TristanCoxResume_2023.pdf">Resume (PDF)</a>
 
-    <h1>Projects</h1>
+
+    </section>
+    <h2>Projects</h2>
+
     <h3>LUI Editor</h3>
     <p>
-        LUI stands for "Lua UI", and is the scripting framework used by the Call of Duty engine for all 2D menus, HUDs,
-        3D waypoints, etc since Black Ops 2.
-        In Black Ops 3, Treyarch released ModTools to allow the modding community they currated back in 2008 to continue
-        modding on new versions of the game engine, unlocking more possibilities.
-        However, this newer release of modtools did not include the ability to modify the game's lua files to run custom
-        UI code. Other modders in the community
-        have since added support, however it is very rudimentary, and frustrating to work with.
-        This rudimentary support leaves several problems including very poor iteration time, no error support from the
-        lua interpreter, and a complicated animation/state system.
-        My LUI editor aims to solve these issues by providing custom content creators the ability to drag & drop UI
-        images in a photoshop-like manner, provide keyframing animation tools, and
-        automatic code generation to streamline the process.
-    <p>
-        <i>Technology used: C++, DirectX11, Freetype, Harfbuzz, Win32</i><br>
-        The code is available here: <a target="_blank"
-            href="https://github.com/nice-sprite/luieditor">https://github.com/nice-sprite/luieditor<br></a>
-
-        <b>Showcase here: <a target="_blank" href="/luieditor.html" target="_blank">Here</a></b><br>
-    </p>
+        I currently am working on LUI Editor, a photoshop-like tool that generates Lua code for interactive UIs in video
+        games
+        to allow rapid iteration on UI design and provide higher quality experiences for both developers and players.
+        <p>
+            <p>LUI Editor is written on a custom DirectX11 3D/2D engine from scratch, except for Freetype, Harfbuzz, and fmtlib
+            </p>
+            <p>
+                For more details: <a target="_blank" href="/luieditor.html" target="_blank">LUI Editor</a>
+                <br>
+                Source Code: <a target="_blank"
+                    href="https://github.com/nice-sprite/luieditor">https://github.com/nice-sprite/luieditor<br></a>
+            </p>
+            Technology used: C++, DirectX11, Win32
+        </p>
     </p>
 
-    <h3>Custom Renderer integration for <a target="_blank" target="_blank" href="https://github.com/emilk/egui">egui</a>
-    </h3>
-
+    <h3>Egui Renderer Integration </h3>
     <p>
-        While researching good libraries and tools to enable me to build the LUI Editor, I ventured into the Rust
-        ecosystem and found egui, an immediate mode UI library.
-        The library looked nice but I was not satisfied with the existing renderer integrations available at the time,
-        and wanted more control. As a result, I wrote a renderer for egui using rust bindings for
-        <a target="_blank" href="https://github.com/bkaradzic/bgfx">bgfx</a>, a well-known and battletested graphics API
-        abstraction. The result performed very well, and I was able to prototype a simple version of what I had in mind
-        for the LUI editor before deciding against using Rust for this project.
 
-    <p>
-        The code is available here: <a target="_blank"
-            href="https://github.com/nice-sprite/equinox">https://github.com/nice-sprite/equinox<br></a>
-        <i>Technology used: Rust, BGFX, Winit (rust windowing library) </i> <br>
-        <b>Showcase here: <a target="_blank" href="/egui.html">Here</a></b><br>
+        Egui is an immediate-mode user-interface library/crate written in Rust. I needed a custom renderer because I
+        wanted to use egui with an existing project that was already using BGFX to render the main application.
+        <p>
+            For more details: <a target="_blank" href="/egui.html">Egui Renderer</a>
+            <br>
+            Source Code: <a target="_blank" href="https://github.com/nice-sprite/equinox">https://github.com/nice-sprite/equinox<br></a>
+        </p>
     </p>
+    Technology used: Rust, Egui, BGFX, Winit (rust windowing library)  <br>
     </p>
     <!--
     <div class="grid grid-cols-1 gap-4 m-5 py-5 justify-items-stretch place-content-center ">

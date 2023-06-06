@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUI Editor Showcase</title>
+    <title>LUI Editor Overview</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="/images/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Arvo&family=JetBrains+Mono&family=Open+Sans&family=Raleway&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
     <a href="/index.html">back</a>
     <h1>LUI Editor</h1>
+    <p>
+        LUI stands for "Lua UI", and is the scripting framework used by the Call of Duty engine for all 2D menus, HUDs,
+        3D waypoints, etc since Black Ops 2.
+        In Black Ops 3, Treyarch released ModTools to allow the modding community they currated back in 2008 to continue
+        modding on new versions of the game engine, unlocking more possibilities.
+        However, this newer release of modtools did not include the ability to modify the game's lua files to run custom
+        UI code. Other modders in the community
+        have since added support, however it is very rudimentary, and frustrating to work with.
+        This rudimentary support leaves several problems including very poor iteration time, no error support from the
+        lua interpreter, and a complicated animation/state system.
+        My LUI editor aims to solve these issues by providing custom content creators the ability to drag & drop UI
+        images in a photoshop-like manner, provide keyframing animation tools, and
+        automatic code generation to streamline the process.
+    </p>
     <p>This is a showcase of features I implemented in my tool that I am proud of.
         Almost all of the code is from-scratch, the only libraries I heavily rely on are Freetype and Harfbuzz.
     </p>
@@ -16,12 +40,12 @@
     <ul>
         <li>
             <h3>Live Reload</h3>
-            <p>The editor is split into 2 parts<br>
-                 <code style="color: purple">luieditor.exe</code> - acts as a "host", stores long-lived data such as the current UI scene, graphics API objects, etc. <br>
-                 <code style="color: darkorange">engine.dll</code> - contains the bulk of the program, eg. scene layout, editor UI, camera code, input handling</p>
-                 <code style="color: darkorange">engine.dll</code> exports 3 functions to luieditor.exe, <code>on_load(), update_and_render(), on_unload()</code>. 
-                 Once luieditor.exe loads the dll and gets the 3 exports with <code>GetProcAddress</code>, it calls on_load, executes the typical win32 window loop while calling <code>update_and_render()</code>, and when the program exits it called <code>on_unload()</code>.
-                 <br>Here it is in action: <br>
+                <p>
+                    Live reload, or hot-reload, or whatever you wish to call it, allows for all the code in the application to be automatically 
+                    updated when a change is detected in <code>engine.dll</code>. This allows me to quickly make, for example, 
+                    a debug ImGui window that shows the camera transforms without having to close the program. 
+                </p>
+
                  <img style="margin:auto; max-width: 75%; max-height: auto" src="/images/upsidedown.gif">
         </li>
         <li>
@@ -29,7 +53,7 @@
             <p>One of the most common tasks a user will do is use the asset browser to add specific images to their UI scene. 
                 This involves waiting on the disk, memory, and image parsing (stb_image) to load the image for use, which takes way longer than 1 frame to finish. 
                 I added a dedicated asset loading thread that enables loading very large images, or whole directories full of large images, without 
-                any hitching or blocking the main input/render thread of the program. I am proud of how simple the implementation is.  <br> 
+                any hitching or blocking the main input/render thread of the program. <br> 
                 Here it is in action:  <br>
                 <img style="margin:auto; max-width: 75%; max-height: auto" src="/images/rendering_demo.gif">
         </li>
@@ -37,8 +61,7 @@
             <h3>SDF Font Atlas</h3>
             <p>Since the LUI editor allows users to zoom in and closely inspect their work, it was important to me that fonts 
                 scale efficiently and smoothly. I used Freetype to implement signed distance field fonts and rolled my own simple font atlas generator on top of it. There's still improvements and bug fixes to be made, but 
-                overall the quality is good, fonts render fast, and layout is <i>mostly</i> working! <br>
-                Here it is in action, with a cute IDA Pro inspired background gradient as well!
+                overall the quality is good, performance is great, and text layout is <i>mostly</i> working! <br>
                 <img style="margin:auto; max-width: 75%; max-height: auto" src="/images/SDF_Transform.gif">
         </li>
     </ul>
