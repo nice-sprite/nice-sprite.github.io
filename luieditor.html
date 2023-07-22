@@ -14,6 +14,7 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Arvo&family=JetBrains+Mono&family=Open+Sans&family=Raleway&display=swap"
     rel="stylesheet">
+    <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                     a debug ImGui window that shows the camera transforms without having to close the program. 
                 </p>
 
-                 <img style="margin:auto; max-width: 75%; max-height: auto" src="/images/upsidedown.gif">
+                 <img src="/images/upsidedown.gif">
         </li>
         <li>
             <h3>Multithreaded Asset Import</h3>
@@ -55,14 +56,14 @@
                 I added a dedicated asset loading thread that enables loading very large images, or whole directories full of large images, without 
                 any hitching or blocking the main input/render thread of the program. <br> 
                 Here it is in action:  <br>
-                <img style="margin:auto; max-width: 75%; max-height: auto" src="/images/rendering_demo.gif">
+                <img src="/images/rendering_demo.gif">
         </li>
         <li>
             <h3>SDF Font Atlas</h3>
             <p>Since the LUI editor allows users to zoom in and closely inspect their work, it was important to me that fonts 
                 scale efficiently and smoothly. I used Freetype to implement signed distance field fonts and rolled my own simple font atlas generator on top of it. There's still improvements and bug fixes to be made, but 
                 overall the quality is good, performance is great, and text layout is <i>mostly</i> working! <br>
-                <img style="margin:auto; max-width: 75%; max-height: auto" src="/images/SDF_Transform.gif">
+                <img src="/images/SDF_Transform.gif">
         </li>
     </ul>
     
