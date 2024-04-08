@@ -15,34 +15,39 @@
         href="https://fonts.googleapis.com/css2?family=Arvo&family=JetBrains+Mono&family=Open+Sans&family=Raleway&display=swap"
         rel="stylesheet">
     <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body >
-
-
-    <h1>Tristan Cox</h1>
     <p>
-        I am studying CS at the University of Texas at Dallas.
-        In my freetime, I develop tools to accelerate gamedev workflows. I am passionate about performance, and strive
-        to produce tools that never lag and feel satisfying to use.
+    Hello, I'm <span style="color: #0092ca;">Tristan Cox</span>. I am studying computer science at UTD. I am interested in 3D graphics, realtime systems, and game tools. 
+        In my free time I am building a 3D rendering engine with Vulkan and Rust. 
+        Here, you can see some of my past projects that I am proud of. Thanks for stopping by!
     <br>
     </p>
     <section>
-        <a href="https://github.com/nice-sprite" target="_blank">My GitHub</a>
-        <br>
+        <a href="https://github.com/nice-sprite" target="_blank">My GitHub</a> | 
+        <a href="/resume/TristanCoxResume_2024.docx">Resume (DOCX)</a> | 
+        <a href="/resume/TristanCoxResume_2024.pdf">Resume (PDF)</a> | 
         <a href="https://www.linkedin.com/in/tristan-cox-07501520b/" target="_blank">LinkedIn</a>
-        <br>
-        <a href="/resume/TristanCoxResume_2023.docx">Resume (DOCX)</a>
-        <br>
-        <a href="/resume/TristanCoxResume_2023.pdf">Resume (PDF)</a>
-
-
     </section>
     <hr class="dashed"></hr>
     <h1>Projects</h1>
 
-    <h3>LUI Editor</h3>
+    <h3>Audio Spectrum Visualizer</h3>
+    <p>
+    My final project for Computer Graphics is an audio visualizer. This was my first exposure to audio programming and it forced me to learn a lot about multithreaded programming. One of the coolest sounds to look at through the spectrum visualizer is the classic dial-up handshake sound, which you can see in the first moments of the video below.<br>
+        <iframe src="https://www.youtube.com/embed/pZq4pw8kIxQ?si=nuxbB7m2oD6uVr2a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>
+            For more details: <a target="_blank" href="/audio_visual.html" target="_blank">Audio Spectrum Visualizer</a>
+        <br>
+        </p>
+    </p>
+
+
+    <h3>3D UI Editor</h3>
     <p>
         I currently am working on LUI Editor, a photoshop-like tool that generates Lua code for interactive UIs in video
         games
@@ -53,8 +58,6 @@
             <p>
                 For more details: <a target="_blank" href="/luieditor.html" target="_blank">LUI Editor</a>
                 <br>
-                Source Code: <a target="_blank"
-                    href="https://github.com/nice-sprite/luieditor">https://github.com/nice-sprite/luieditor<br></a>
             </p>
             Technology used: C++, DirectX11, Win32
         </p>
@@ -68,7 +71,6 @@
         <p>
             For more details: <a target="_blank" href="/egui.html">Egui Renderer</a>
             <br>
-            Source Code: <a target="_blank" href="https://github.com/nice-sprite/equinox">https://github.com/nice-sprite/equinox<br></a>
         </p>
     </p>
 Technology used: Rust, Egui, BGFX, Winit (rust windowing library)  <br>
